@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <section class="weather">
+    <div class="container">
+      <div class="weather__inner">
+        <form class="search-cities" action="#" type="submit">
+          <input class = "search-cities__text" type="text" placeholder="Aktobe">
+          <button class = "search-cities__bt">
+            <img class="search-cities__bt-page" src="images/Shape.svg" alt="shape">
+          </button>
+        </form>
+        <div class="weather__info">
+          <div class="weather__info-left">
+            <div class="weather__left-list">
+              <div class="weather__info-now" id="Now">
+                <p class="weather__left-degree">город!</p>
+                <img class="weather__clouds" src="https://openweathermap.org/img/wn/03d@4x.png" alt="cloud">
+                <div class="weather__like-city">
+                  <p class="weather__like-city-name">Добавь меня в избранные</p>
+                  <a href="#" class="weather__like-city-page">
+                    <img src="images/likeNow.svg" alt="like">
+                  </a>
+                </div>
+              </div>
+              <div class="weather__info-details" id="details">
+                <p class="weather__left-city">Твой город</p>
+                <ul class="left-city-info">
+                  <li class="left-city-info temperature">всякие штуки о нём:</li>
+                  <li class="left-city-info feelsLike">...</li>
+                  <li class="left-city-info clouds">...</li>
+                  <li class="left-city-info sunrise">...</li>
+                  <li class="left-city-info sunset">...</li>
+                </ul>
+              </div>
+              <div class="weather__info-forecast" id="forecast">
+                <p class="weather__forecast-city">Aktobe</p>
+                <ul class="forecast-day-info">
+                  <li class="forecast-day-info-list">
+                    <div class="forecast-day">
+                      <p class="forecast-day__num">17 May</p>
+                      <p class="forecast-day__degree">Temperature 13&#176</p>
+                      <p class="forecast-day__feels">Feels like 10&#176</p>
+                    </div>
+                    <div class="forecast__time">
+                      <p class="forecast__time-num">12:00</p>
+                      <p class="forecast__time-weather">Rain</p>
+                      <img src="images/cloudForecast.png" alt="cloud">
+                    </div>
+                  </li>
+                  <li class="forecast-day-info-list">
+                    <div class="forecast-day">
+                      <p class="forecast-day__num">17 May</p>
+                      <p class="forecast-day__degree">Temperature 13&#176</p>
+                      <p class="forecast-day__feels">Feels like 10&#176</p>
+                    </div>
+                    <div class="forecast__time">
+                      <p class="forecast__time-num">12:00</p>
+                      <p class="forecast__time-weather">Rain</p>
+                      <img src="images/cloudForecast.png" alt="cloud">
+                    </div>
+                  </li>
+                  <li class="forecast-day-info-list">
+                    <div class="forecast-day">
+                      <p class="forecast-day__num">17 May</p>
+                      <p class="forecast-day__degree">Temperature 13&#176</p>
+                      <p class="forecast-day__feels">Feels like 10&#176</p>
+                    </div>
+                    <div class="forecast__time">
+                      <p class="forecast__time-num">12:00</p>
+                      <p class="forecast__time-weather">Rain</p>
+                      <img src="images/cloudForecast.png" alt="cloud">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div> 
+            <ul class="tabs">
+              <li class="tabs__list">
+                <a class="tabs__list-item bgColor" href="#Now">Now</a>
+              </li>
+              <li class="tabs__list">
+                <a class="tabs__list-item" href="#details">Details</a>
+              </li>
+              <li class="tabs__list">
+                <a class="tabs__list-item" href="#forecast">Forecast</a>
+              </li>
+            </ul>
+          </div>
+          <div class="weather__info-right">
+            <p class="weather__location">
+              Added Locations:
+            </p>
+            <ul class="location-cities">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
