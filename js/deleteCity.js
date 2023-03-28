@@ -1,20 +1,20 @@
 export {deleteCities}
 import { lockCities } from "./main.js"
-import { arrayCitiesList } from "./createRight.js"
-
+import { mySet } from "./createRight.js"
 
 function deleteCities() {
   lockCities.addEventListener('click', (event) => {
     if (event.target.classList.contains('deleteCity')) {
       let elementClickId = event.target.id
-      let elementId = Number(elementClickId.slice(1))
-
       let domId = document.querySelector(`#${elementClickId}`)
       domId.parentNode.remove()
+      
+      let contentCity = domId.parentNode.childNodes[0].textContent
 
-      arrayCitiesList.splice(elementId, 1)
+      mySet.delete(contentCity)
+
       localStorage.removeItem('newCitiesList')  
-      localStorage.setItem('newCitiesList', JSON.stringify(arrayCitiesList))
+      localStorage.setItem('newCitiesList', JSON.stringify([...mySet]))
 
 
       for (let j = 0; j <= lockCities.childNodes.length - 1; j++) {

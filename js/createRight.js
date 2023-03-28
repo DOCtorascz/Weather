@@ -1,7 +1,7 @@
-export {arrCitiesList, addCitiesList, arrayCitiesList}
+export {arrCitiesList, addCitiesList, mySet}
 import { removeCities } from "./main.js"
 
-const arrayCitiesList = []
+const mySet = new Set()
 
 function addCitiesList() {
   let saveCity2 = localStorage.getItem('newCitiesList')
@@ -9,8 +9,8 @@ function addCitiesList() {
 
   if (saveCity2 != null) {
     saveCity2.forEach((item, index) => {
-      arrayCitiesList.splice(index, arrayCitiesList.length)
-      arrayCitiesList.push(item)
+      mySet.delete(`${item}`)
+      mySet.add(`${item}`)
   
       const locationCitites = document.querySelector('.location-cities')
       const listCities = document.createElement('li')
@@ -33,9 +33,9 @@ function addCitiesList() {
 function arrCitiesList() {
   removeCities()
   let cityList = document.querySelector('.weather__like-city-name')
-  arrayCitiesList.push(cityList.textContent)
+  mySet.add(`${cityList.textContent}`)
 
-  localStorage.setItem('newCitiesList', JSON.stringify(arrayCitiesList))
+  localStorage.setItem('newCitiesList',  JSON.stringify([...mySet]))
 
   addCitiesList()
 }
